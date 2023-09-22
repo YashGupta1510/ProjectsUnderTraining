@@ -1,0 +1,20 @@
+Scope:
+The scope of AWS Assignment project is to develop and deploy an application on the AWS cloud infrastructure. 
+The project involves creating an AWS account, setting up a virtual network two subnets, a private and a public subnet, deploying a virtual machine 
+(VM) with an application in public subnet, ensuring secure communication between the VM and the database (RDS), deploying the
+application to Elastic Beanstalk service, and creating a Lambda function to trigger upon file uploads in an S3 bucket.
+
+
+Assumptions:
+
+Infrastructure Requirements Only: As mentioned, the project currently provides only infrastructure requirements and does not disclose any details about the application's functionality or purpose. As a result, all development tasks will be based solely on the provided infrastructure requirements.
+
+AWS Account Access: The developer undertaking this project has the necessary credentials and access to create and configure AWS resources, including EC2 instances, VPCs, subnets, RDS instances, Elastic Beanstalk applications, and Lambda functions.
+
+Application Code: The developer already has an existing application code that can be deployed on the VM and Elastic Beanstalk. The code should be compatible with the required AWS services.
+
+AWS Services Availability: All required AWS services (VPC, EC2, RDS, Elastic Beanstalk, S3, and Lambda) are available in the region chosen for deployment and can be accessed by the developer.
+
+S3 Bucket Configuration: It is assumed that an S3 bucket already exists, and the developer has permissions to upload files to the bucket. The bucket should be properly configured to trigger the Lambda function upon file uploads.
+
+File Name Retrieval in Lambda: The Lambda function created will be designed to retrieve and print the name of the uploaded file. Other specific actions on the uploaded file are beyond the current scope.

@@ -1,0 +1,47 @@
+Component Description File
+
+Project: Azure Project
+
+This file provides a description of the components used in the Azure project, including their purpose and functionality.
+
+1. VNet (Virtual Network):
+   - Purpose: VNet provides a logically isolated virtual network environment in Azure, allowing you to securely connect and control network traffic between Azure resources.
+   - Functionality: It enables you to define IP address ranges, subnets, and network security groups to segment and control the network traffic within your project.
+   - Use: A virtual network was created with 2 subnets, a public and a priavte subnet.
+
+2. VM (Virtual Machine):
+   - Purpose: VMs are virtualized compute instances in Azure, providing the flexibility to run applications and services on various operating systems.
+   - Functionality: VMs offer customizable virtualized environments with options for CPU, memory, storage, and networking configurations, allowing you to host applications or services based on project requirements.
+   - Use: VM's were used to deploy the angular and spring boot applications in the inital stages.
+
+3. App Service:
+   - Purpose: App Service is a fully managed platform-as-a-service (PaaS) offering in Azure, enabling you to deploy and scale web applications and APIs easily.
+   - Functionality: It provides a platform for hosting web apps, mobile app backends, and RESTful APIs, supporting multiple programming languages and frameworks.
+   - Use: App service was used to host the Angular porject.
+
+4. Blob Storage:
+   - Purpose: Blob Storage is a scalable object storage service in Azure, designed to store and serve large amounts of unstructured data, such as images, videos, and documents.
+   - Functionality: Blob Storage allows you to store and access data programmatically, with features like tiered storage, access controls, and data encryption, making it suitable for various application scenarios.
+   - Use: Used to store files and trigger Azure functions
+
+5. Azure Functions:
+   - Purpose: Azure Functions is a serverless compute service that enables you to run event-driven code in the cloud without managing infrastructure.
+   - Functionality: Azure Functions allow you to execute code in response to events or triggers, such as changes in data, incoming HTTP requests, or timers. It provides an efficient and scalable way to process events and automate tasks.
+   - Use: The azur function was used to print the file name of any new file being uploaded to the blob.
+
+6. AKS (Azure Kubernetes Service):
+   - Purpose: AKS is a managed container orchestration service in Azure, providing a simplified way to deploy, manage, and scale containerized applications using Kubernetes.
+   - Functionality: AKS simplifies the deployment and management of Kubernetes clusters, enabling you to run and scale containerized workloads with features like automatic scaling, load balancing, and container health monitoring.
+   - Use: It provided Kubernetes service to deploy the demo app and make it globally accessible along with load balancers.
+
+7. Clusters:
+   - Purpose: Clusters are the fundamental building blocks of AKS, representing a group of containerized resources managed by Kubernetes.
+   - Functionality: Clusters provide an environment for deploying and running containerized applications. They consist of multiple worker nodes that host containers and a control plane that manages and orchestrates the containers within the cluster.
+   - Use: A pair of nodes were deployed to counter the traffic surge on single server.
+
+8. Azure MySQL Flexible Server:
+   - Purpose: Azure MySQL Flexible Server is a fully managed, flexible, and scalable relational database service in Azure, based on the MySQL database engine.
+   - Functionality: It provides a secure and reliable database hosting environment, allowing you to deploy and manage MySQL databases with ease. You can scale compute and storage resources independently to meet your application's requirements.
+   - Use: Used to store the data for the angular and Spring boot application. It communicated with Spring boot VM to keep the communication private.
+
+Note: This component description file provides a high-level overview of the components used in the Azure project. For detailed configuration and setup instructions, please refer to the Azure documentation and guides provided by Microsoft Azure.

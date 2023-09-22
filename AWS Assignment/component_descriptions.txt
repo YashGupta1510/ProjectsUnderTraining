@@ -1,0 +1,43 @@
+Component Description File
+
+Project: AWS Assignment Project
+
+This file provides a description of the components used in the project, including their purpose and functionality.
+
+1. VPC (Virtual Private Cloud):
+   - Purpose: The VPC provides an isolated virtual network environment for the project, enabling secure and private communication between resources.
+   - Functionality: It allows you to define and control the IP address range, subnets, route tables, and security settings for your project's resources.
+   - Use: Created separate VPC for the project for IP range 101.0.0.0/16.
+
+2. Subnet:
+   - Purpose: Subnets are subdivisions of the VPC network, allowing segmentation of resources based on their specific requirements or security considerations.
+   - Functionality: Subnets provide logical separation within the VPC and facilitate the distribution of resources across availability zones for high availability and fault tolerance.
+   - Use: 2 subnets were created public and private. Public subnet range was split to 101.0.10.0/28 and 101.0.20.0/28 and private subnet range was split to 101.0.30.0/28 and 101.0.40.0/28. This was done to be able to use RDS as RDS has a minimum 2 AZ requirement. 
+
+
+3. EC2 (Elastic Compute Cloud):
+   - Purpose: EC2 instances are virtual servers that provide scalable computing capacity for running applications and hosting services.
+   - Functionality: EC2 instances offer customizable virtual machines, allowing you to deploy various operating systems and software configurations based on project requirements.
+   - Use: Initally two EC2 instances were created on public subnet. One for hosting frontend application and other to act as bastion host for the private rds and host the spring boot app. Later the bastion host was terminated as it had to be re-created by the Elastic Beanstalk.
+
+4. Elastic Beanstalk:
+   - Purpose: Elastic Beanstalk is a platform-as-a-service (PaaS) offering that simplifies the deployment and management of applications.
+   - Functionality: It automates the process of provisioning and scaling the underlying infrastructure required to run applications, allowing developers to focus on writing code rather than managing infrastructure.
+   - Use: It is used to host the Spring boot appplication and get an Elastic IP for the angular server.
+
+5. RDS (Relational Database Service):
+   - Purpose: RDS is a managed database service that simplifies the administration and operation of relational databases.
+   - Functionality: It provides scalable and highly available database instances, supporting popular database engines such as MySQL, PostgreSQL, Oracle, and SQL Server.
+   - Use: It used to store the data and interact with the Spring boot application.
+
+6. S3 Bucket (Simple Storage Service):
+   - Purpose: S3 is an object storage service that offers secure, durable, and scalable storage for various types of data, including files, images, and videos.
+   - Functionality: S3 buckets allow you to store and retrieve data programmatically, with features such as versioning, access controls, and lifecycle management.
+   - Use: To store files.
+
+7. Lambda Function:
+   - Purpose: Lambda is a serverless compute service that lets you run code without provisioning or managing servers.
+   - Functionality: Lambda functions are event-driven and can be triggered by various events, such as changes to data in an S3 bucket or incoming API requests. They provide a scalable and cost-efficient way to execute code in response to specific events.
+   - Use: Print the file name in the cloudwatch logs whenever a new file is uploaded to associated S3 bucket and triggerd the funciton.
+
+Note: This component description file provides a high-level overview of the components used in the project. For detailed configuration and setup instructions, please refer to the respective documentation and guides provided by the cloud service provider or framework used.

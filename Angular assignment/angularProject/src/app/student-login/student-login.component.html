@@ -1,0 +1,20 @@
+<h3 style="margin: 10%;margin-bottom: 2rem;">Find Result</h3>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()" style="margin: 10%;margin-top: 1rem;" >
+    <div class="form-group row m-4">
+        <label for="rollnumber" class="col-sm-2 col-form-label">Roll Number</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="rollnumber" placeholder="Roll Number" formControlName= "rollno">
+        </div>
+        <span class="error" *ngIf="rollno?.invalid && rollno?.touched">Roll Number is required</span>
+    </div>
+    <div class="form-group row m-4">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="Name" formControlName ="name">
+        </div>
+        <span class="error" *ngIf="name?.invalid && name?.touched">Name is required</span>
+    </div>
+    <button type="submit" class="btn btn-primary m-2" [disabled]="loginForm.invalid" style="margin: 2px;">Show Result</button>
+    <button type="reset" class="btn btn-light m-2" style="margin: 2px;">Clear</button>
+</form>

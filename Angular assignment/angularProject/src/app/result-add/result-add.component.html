@@ -1,0 +1,42 @@
+
+<body>
+   
+        <div class="fixed-header mt-3" >
+            <b>ADD NEW-RESULT</b><br>
+            <label *ngIf="error" style="color: red;">ALREADY EXIST</label>
+        </div>
+        <form [formGroup]="addStudent" (ngSubmit)="add()" class="border border-warning mt-4 shadow-lg p-4 mb-4 bg-white">
+            <div class="row mb-3 mt-5">
+                <label for="rollno" class="col-sm-2 col-form-label ">RollNo.</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="rollno" name="rollno" formControlName="rollno" >
+                    <span class="error" *ngIf="rollno?.invalid && rollno?.touched">Roll number is required</span>
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <label for="name" class="col-sm-2 col-form-label ">NAME</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" formControlName="name" >
+                    <span  *ngIf="name?.invalid && name?.touched" class="error" >Name is required</span>
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <label for="dob" class="col-sm-2 col-form-label ">DATE OF BIRTH</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="dd.mm.yyyy" id="dob" name="dob" formControlName="dob" >
+                    <span *ngIf="dob?.invalid && dob?.touched" class="error">Date of Birth is required</span>
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <label for="score" class="col-sm-2 col-form-label ">SCORE</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="score" name="score"  formControlName="score">
+                    <span *ngIf="score?.invalid && score?.touched" class="error">Score is required</span>
+                </div>
+            </div>
+
+
+            <button type="submit" [disabled]="addStudent.invalid" class="btn btn-success m-1">ADD</button>
+            <button type="reset" class="btn btn-info m-1">CLEAR</button>
+        </form>
+</body>

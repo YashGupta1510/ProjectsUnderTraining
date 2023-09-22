@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+   
+    stages {
+        stage('Starting') {
+            steps {
+                echo 'Started pipeline'
+            }
+        }
+        stage('git'){
+            steps{
+                git credentialsId:'gitlab',url:'https://git.nagarro.com/GITG00641/Java/yash-gupta.git'
+            }
+        }
+        stage('Building'){
+            steps{
+                bat 'cd Assignment5/advanceJava5API && mvn clean install'
+            }
+        }
+    }
+}

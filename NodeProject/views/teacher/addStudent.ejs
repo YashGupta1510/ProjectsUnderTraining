@@ -1,0 +1,34 @@
+<a href="/teacher/option" class="btn btn-info" style="margin-top:5px;">Back</a>
+<h4>Add Student-Result</h4>
+<div id = "err"> <h6 style="color: red; text-align: center;"> <%= error %></h6></div>
+<form method="POST" class="addStu" autocomplete="off">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+      <input type="number" name="rollno" required class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name : </label>
+        <input type="text" name="name" required class="form-control" id="exampleInputEmail1" >
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
+        <input type="text" name="dob" class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Score : </label>
+        <input type="number" name="score" required class="form-control" id="exampleInputEmail1">
+      </div>
+    <button type="submit" class="btn btn-success">Add</button>
+    <a href="/teacher/viewAll" class="btn btn-primary">View All</a>
+</form>
+
+<script>
+  var s = document.getElementById("err");
+  if(error != null){
+    console.log(`this is == ${error}`);
+    s.style.visibility = 'visible';
+  }else{
+    s.style.visibility = 'hidden';
+  }
+</script>
